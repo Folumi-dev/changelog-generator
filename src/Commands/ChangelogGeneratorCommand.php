@@ -28,7 +28,13 @@ class ChangelogGeneratorCommand extends Command
             return true;
         });
 
-        $changelog = Str::of(File::get($changelogLocation))
+        $changelogFileContents = '';
+
+        if (File::exists($changelogLocation)) {
+            $changelogFileContents = File::get($changelogLocation);
+        }
+
+        $changelog = Str::of($changelogFileContents)
             ->replace("# Changelog\n", '');
 
         $files->each(function (string $file) use ($directory, &$changelog) {
