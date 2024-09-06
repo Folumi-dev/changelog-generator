@@ -2,9 +2,9 @@
 
 namespace Folumi\ChangelogGenerator\Tests;
 
+use Folumi\ChangelogGenerator\ChangelogGeneratorServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Folumi\ChangelogGenerator\ChangelogGeneratorServiceProvider;
 
 class TestCase extends Orchestra
 {

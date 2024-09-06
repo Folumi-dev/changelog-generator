@@ -2,9 +2,9 @@
 
 namespace Folumi\ChangelogGenerator;
 
+use Folumi\ChangelogGenerator\Commands\ChangelogGeneratorCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Folumi\ChangelogGenerator\Commands\ChangelogGeneratorCommand;
 
 class ChangelogGeneratorServiceProvider extends PackageServiceProvider
 {
