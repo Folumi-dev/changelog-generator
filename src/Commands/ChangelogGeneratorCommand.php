@@ -32,9 +32,13 @@ class ChangelogGeneratorCommand extends Command
             ->replace("# Changelog\n", '');
 
         $files->each(function (string $file) use ($directory, &$changelog) {
-            $data = Yaml::parseFile($directory.'/'.$file);
+            $filePath = $directory.'/'.$file;
+
+            $data = Yaml::parseFile($filePath);
 
             $changelog = $changelog->prepend("* [{$data['issue']}] {$data['title']} by {$data['contributor']} \n");
+
+            File::delete($filePath);
         });
 
         $changelog = $changelog->prepend("\n")
