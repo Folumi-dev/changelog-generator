@@ -20,12 +20,18 @@ class ChangelogFileGenerateCommand extends Command
         $title = $this->ask('What is the description of your change?');
         $contributor = $this->ask('What is the username of the contributor?');
 
-        File::makeDirectory($directory);
+        File::ensureDirectoryExists($directory);
 
         $yaml = Yaml::dump([
-            'issue' => $issue,
+            'issue' => Str::of($issue)
+                ->remove('#')
+                ->prepend('#')
+                ->toString(),
             'title' => $title,
-            'contributor' => $contributor,
+            'contributor' => Str::of($contributor)
+                ->remove('@')
+                ->prepend('@')
+                ->toString(),
         ]);
 
         File::put($directory.DIRECTORY_SEPARATOR.$issue.'.yml', $yaml);
