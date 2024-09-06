@@ -2,6 +2,10 @@
 
 All notable changes to `changelog-generator` will be documented in this file.
 
+## v1.1.2 - 2024-09-06
+
+- Fixed issue with Str class use missing.
+
 ## v1.1.1 - 2024-09-06
 
 - Fixed issue with folder creation, if folder already existed.
