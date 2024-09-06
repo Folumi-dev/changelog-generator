@@ -1,7 +1,7 @@
 <?php
 
-use \Illuminate\Support\Facades\Artisan;
-use \Folumi\ChangelogGenerator\Commands\ChangelogGeneratorCommand;
+use Folumi\ChangelogGenerator\Commands\ChangelogGeneratorCommand;
+use Illuminate\Support\Facades\Artisan;
 
 it('can test', function () {
     /*$directory = base_path() . config('changelog-generator.changelog_directory');

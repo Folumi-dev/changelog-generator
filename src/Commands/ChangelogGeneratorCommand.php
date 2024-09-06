@@ -16,8 +16,8 @@ class ChangelogGeneratorCommand extends Command
 
     public function handle(): int
     {
-        $directory = base_path() . DIRECTORY_SEPARATOR . config('changelog-generator.changelog_directory');
-        $changelogLocation = base_path() . DIRECTORY_SEPARATOR . config('changelog-generator.changelog_location');
+        $directory = base_path().DIRECTORY_SEPARATOR.config('changelog-generator.changelog_directory');
+        $changelogLocation = base_path().DIRECTORY_SEPARATOR.config('changelog-generator.changelog_location');
         $date = Carbon::now()->format(config('changelog-generator.changelog_date_format'));
 
         $files = collect(scandir($directory))->filter(function (string $filename) {
@@ -32,7 +32,7 @@ class ChangelogGeneratorCommand extends Command
             ->replace("# Changelog\n", '');
 
         $files->each(function (string $file) use ($directory, &$changelog) {
-            $data = Yaml::parseFile($directory .'/'. $file);
+            $data = Yaml::parseFile($directory.'/'.$file);
 
             $changelog = $changelog->prepend("* [{$data['issue']}] {$data['title']} by {$data['contributor']} \n");
         });
