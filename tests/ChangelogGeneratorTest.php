@@ -9,14 +9,13 @@ it('can generate changelog', function () {
     $changelogLocation = base_path().DIRECTORY_SEPARATOR.config('changelog-generator.changelog_location');
 
     File::put(
-        $directory . '/test.yml',
-        <<<yml
+        $directory.'/test.yml',
+        <<<'yml'
         title: 'test change'
         issue: '#1234'
         contributor: '@GeNyaa'
         yml
     );
-
 
     Artisan::call(ChangelogGeneratorCommand::class, [
         'version' => 'v1.0.0',
