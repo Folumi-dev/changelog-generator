@@ -8,6 +8,8 @@ it('can generate changelog', function () {
     $directory = base_path().DIRECTORY_SEPARATOR.config('changelog-generator.changelog_directory');
     $changelogLocation = base_path().DIRECTORY_SEPARATOR.config('changelog-generator.changelog_location');
 
+    File::makeDirectory($directory);
+
     File::put(
         $directory.'/test.yml',
         <<<'yml'
