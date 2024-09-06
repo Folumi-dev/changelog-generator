@@ -1,13 +1,11 @@
 # Changelog Generator
-Easy way to turn yml files into changlogs with laravel artisan commands.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/folumi-dev/changelog-generator.svg?style=flat-square)](https://packagist.org/packages/folumi-dev/changelog-generator)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/folumi-dev/changelog-generator/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/folumi-dev/changelog-generator/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/folumi-dev/changelog-generator/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/folumi-dev/changelog-generator/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/folumi-dev/changelog-generator.svg?style=flat-square)](https://packagist.org/packages/folumi-dev/changelog-generator)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
+Easy way to turn yml files into changlogs with laravel artisan commands.
 ## Installation
 
 You can install the package via composer:
