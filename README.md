@@ -13,40 +13,13 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require folumi-dev/changelog-generator
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="changelog-generator-migrations"
-php artisan migrate
+composer require folumi-dev/changelog-generator --dev
 ```
 
 You can publish the config file with:
 
 ```bash
 php artisan vendor:publish --tag="changelog-generator-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="changelog-generator-views"
-```
-
-## Usage
-
-```php
-$changelogGenerator = new Folumi\ChangelogGenerator();
-echo $changelogGenerator->echoPhrase('Hello, Folumi!');
 ```
 
 ## Testing
@@ -58,14 +31,6 @@ composer test
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Contributors
 
