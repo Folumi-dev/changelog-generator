@@ -1,6 +1,7 @@
 <?php
 
-// config for Folumi/ChangelogGenerator
-return [
+declare(strict_types=1);
 
+return [
+    'changelog_directory' => env('CHANGELOG_DIRECTORY', '/changelogs'),
 ];

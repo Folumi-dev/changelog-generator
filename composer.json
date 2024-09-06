@@ -2,7 +2,7 @@
     "name": "folumi-dev/changelog-generator",
     "description": "Easy way to turn yml files into changlogs with laravel artisan commands.",
     "keywords": [
-        "Folumi",
+        "folumi-dev",
         "laravel",
         "changelog-generator"
     ],

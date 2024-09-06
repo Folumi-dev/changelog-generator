@@ -14,6 +14,14 @@ class ChangelogGeneratorCommand extends Command
     {
         $this->comment('All done');
 
+
+        $directory = __DIR__ . config('changelog-generator.changelog_directory');
+
+        $files = scandir($directory);
+
+
+
+
         return self::SUCCESS;
     }
 }
