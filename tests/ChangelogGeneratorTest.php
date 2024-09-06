@@ -1,6 +1,6 @@
 <?php
 
-use Folumi\ChangelogGenerator\Commands\ChangelogGeneratorCommand;
+use Folumi\ChangelogGenerator\Commands\ChangelogGenerateCommand;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 
@@ -19,7 +19,7 @@ it('can generate changelog', function () {
         yml
     );
 
-    Artisan::call(ChangelogGeneratorCommand::class, [
+    Artisan::call(ChangelogGenerateCommand::class, [
         'version' => 'v1.0.0',
     ]);
 

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Symfony\Component\Yaml\Yaml;
 
-class ChangelogGeneratorCommand extends Command
+class ChangelogGenerateCommand extends Command
 {
     public $signature = 'changelog:generate {version}';
 

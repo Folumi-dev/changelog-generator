@@ -2,7 +2,8 @@
 
 namespace Folumi\ChangelogGenerator;
 
-use Folumi\ChangelogGenerator\Commands\ChangelogGeneratorCommand;
+use Folumi\ChangelogGenerator\Commands\ChangelogFileGenerateCommand;
+use Folumi\ChangelogGenerator\Commands\ChangelogGenerateCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -18,6 +19,9 @@ class ChangelogGeneratorServiceProvider extends PackageServiceProvider
         $package
             ->name('changelog-generator')
             ->hasConfigFile()
-            ->hasCommand(ChangelogGeneratorCommand::class);
+            ->hasCommands(
+                ChangelogGenerateCommand::class,
+                ChangelogFileGenerateCommand::class,
+            );
     }
 }
