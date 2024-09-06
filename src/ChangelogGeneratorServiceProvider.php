@@ -18,8 +18,6 @@ class ChangelogGeneratorServiceProvider extends PackageServiceProvider
         $package
             ->name('changelog-generator')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_changelog_generator_table')
             ->hasCommand(ChangelogGeneratorCommand::class);
     }
 }
