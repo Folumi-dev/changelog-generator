@@ -4,6 +4,7 @@ namespace Folumi\ChangelogGenerator\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Symfony\Component\Yaml\Yaml;
 
 class ChangelogFileGenerateCommand extends Command
