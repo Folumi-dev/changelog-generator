@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/folumi-dev/changelog-generator/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/folumi-dev/changelog-generator/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/folumi-dev/changelog-generator.svg?style=flat-square)](https://packagist.org/packages/folumi-dev/changelog-generator)
 
-Easy way to turn yml files into changlogs with laravel artisan commands.
+Easy way to turn yml files into changelogs with laravel artisan commands.
 ## Installation
 
 You can install the package via composer:
