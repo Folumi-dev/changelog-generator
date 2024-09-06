@@ -3,9 +3,7 @@
 namespace Folumi\ChangelogGenerator\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
 use Symfony\Component\Yaml\Yaml;
 
 class ChangelogFileGenerateCommand extends Command
@@ -17,7 +15,6 @@ class ChangelogFileGenerateCommand extends Command
     public function handle(): int
     {
         $directory = base_path().DIRECTORY_SEPARATOR.config('changelog-generator.changelog_directory');
-
 
         $issue = $this->ask('What is your issue number?');
         $title = $this->ask('What is the description of your change?');
@@ -31,7 +28,7 @@ class ChangelogFileGenerateCommand extends Command
             'contributor' => $contributor,
         ]);
 
-        File::put($directory . DIRECTORY_SEPARATOR . $issue .'.yml', $yaml);
+        File::put($directory.DIRECTORY_SEPARATOR.$issue.'.yml', $yaml);
 
         $this->comment('All done');
 
