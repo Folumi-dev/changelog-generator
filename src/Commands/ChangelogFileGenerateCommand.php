@@ -1,44 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Folumi\ChangelogGenerator\Commands;
 
+use Folumi\ChangelogGenerator\Actions\YmlFileGenerate;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
-use Symfony\Component\Yaml\Yaml;
 
-class ChangelogFileGenerateCommand extends Command
+final class ChangelogFileGenerateCommand extends Command
 {
     public $signature = 'changelog:file';
 
     public $description = 'Generate changelog file in the changelog folder.';
 
+    public function __construct(
+        private readonly YmlFileGenerate $ymlFileGenerate,
+    ) {
+        parent::__construct();
+    }
+
     public function handle(): int
     {
-        $directory = base_path().DIRECTORY_SEPARATOR.config('changelog-generator.changelog_directory');
-
         $issue = $this->ask('What is your issue number?');
-        $title = $this->ask('What is the description of your change?');
+        $description = $this->ask('What is the description of your change?');
         $contributor = $this->ask('What is the username of the contributor?');
 
-        File::ensureDirectoryExists($directory);
-
-        $yaml = Yaml::dump([
-            'issue' => Str::of($issue)
-                ->remove('#')
-                ->prepend('#')
-                ->toString(),
-            'title' => $title,
-            'contributor' => Str::of($contributor)
-                ->remove('@')
-                ->prepend('@')
-                ->toString(),
-        ]);
-
-        File::put($directory.DIRECTORY_SEPARATOR.$issue.'.yml', $yaml);
-
-        $this->comment('All done');
-
-        return self::SUCCESS;
+        return (int) ($this->ymlFileGenerate)($issue, $description, $contributor);
     }
 }

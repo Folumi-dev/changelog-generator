@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Folumi\ChangelogGenerator;
 
 use Folumi\ChangelogGenerator\Commands\ChangelogFileGenerateCommand;
