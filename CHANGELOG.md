@@ -2,6 +2,15 @@
 
 All notable changes to `changelog-generator` will be documented in this file.
 
+## v1.2.0 - 2024-09-19
+
+* Added translations file for more customization
+* Fix a bug with testing if it was ran multiple times in a row
+* Changed title to description in yml ***Update all yml files from title to description***
+* Moved the actual actions of the commands into classes so they can be used outside of commands
+
+**Full Changelog**: https://github.com/Folumi-dev/changelog-generator/compare/v1.1.2...v1.2.0
+
 ## v1.1.2 - 2024-09-06
 
 - Fixed issue with Str class use missing.
