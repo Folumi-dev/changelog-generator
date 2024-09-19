@@ -20,6 +20,12 @@ You can publish the config file with:
 php artisan vendor:publish --tag="changelog-generator-config"
 ```
 
+You can publish the translations file with:
+
+```bash
+php artisan vendor:publish --tag="changelog-generator-translations"
+```
+
 ## Usage
 
 You can generate a yml file with the following command:
