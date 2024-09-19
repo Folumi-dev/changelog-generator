@@ -18,10 +18,10 @@ final readonly class GenerateChangelog
         $changelogLocation = base_path().DIRECTORY_SEPARATOR.config('changelog-generator.changelog_location');
         $date = Carbon::now()->format(config('changelog-generator.changelog_date_format'));
 
-        $files = collect(File::allFiles($directory)
+        $files = collect(File::allFiles($directory))
             ->filter(function (SplFileInfo $file) {
                 return Str::of($file->getPathname())->endsWith('.yml');
-            }));
+            });
 
         $changelogFileContents = '';
 
