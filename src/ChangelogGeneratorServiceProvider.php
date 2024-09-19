@@ -24,6 +24,7 @@ class ChangelogGeneratorServiceProvider extends PackageServiceProvider
             ->hasCommands(
                 ChangelogGenerateCommand::class,
                 ChangelogFileGenerateCommand::class,
-            );
+            )
+            ->hasTranslations();
     }
 }

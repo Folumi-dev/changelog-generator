@@ -30,7 +30,7 @@ final readonly class GenerateChangelog
         }
 
         $changelog = Str::of($changelogFileContents)
-            ->replace("# Changelog\n", '');
+            ->replace(sprintf("# %s\n", trans('changelog-generator::translations.changelog')), '');
 
         $files->each(function (SplFileInfo $file) use (&$changelog) {
 
@@ -40,15 +40,21 @@ final readonly class GenerateChangelog
                 return;
             }
 
-            $changelog = $changelog->prepend("* [{$data['issue']}] {$data['description']} by {$data['contributor']} \n");
+            $changelog = $changelog->prepend(sprintf(
+                "* [%s] %s %s %s \n",
+                $data['issue'],
+                $data['description'],
+                trans('changelog-generator::translations.by'),
+                $data['contributor'],
+            ));
 
             File::delete($file->getRealPath());
         });
 
         $changelog = $changelog->prepend("\n")
-            ->prepend("## {$version} - {$date}\n")
+            ->prepend(sprintf("## %s - %s\n", $version, $date))
             ->prepend("\n")
-            ->prepend("# Changelog\n");
+            ->prepend(sprintf("# %s\n", trans('changelog-generator::translations.changelog')));
 
         File::replace($changelogLocation, $changelog->toString());
     }
