@@ -13,7 +13,7 @@ it('can generate changelog', function () {
     File::put(
         $directory.'/test.yml',
         <<<'yml'
-        title: 'test change'
+        description: 'test change'
         issue: '#1234'
         contributor: '@GeNyaa'
         yml
