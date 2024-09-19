@@ -34,7 +34,7 @@ final readonly class GenerateChangelog
 
         $files->each(function (SplFileInfo $file) use (&$changelog) {
 
-            $data = Yaml::parseFile($file->getContents());
+            $data = Yaml::parse($file->getContents());
 
             if (! isset($data['issue'], $data['description'], $data['contributor'])) {
                 return;
