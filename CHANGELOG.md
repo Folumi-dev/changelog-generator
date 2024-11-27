@@ -2,6 +2,13 @@
 
 All notable changes to `changelog-generator` will be documented in this file.
 
+## v1.2.1 - 2024-11-27
+
+- Fixed bug with return typing
+- Added test for file generation command
+
+**Full Changelog**: https://github.com/Folumi-dev/changelog-generator/compare/v1.2.0...v1.2.1
+
 ## v1.2.0 - 2024-09-19
 
 * Added translations file for more customization
