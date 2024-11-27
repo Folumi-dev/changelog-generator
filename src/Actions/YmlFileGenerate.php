@@ -31,6 +31,6 @@ final readonly class YmlFileGenerate
                 ->toString(),
         ]);
 
-        return File::put($directory.DIRECTORY_SEPARATOR.$issue.'.yml', $yaml);
+        return (bool) File::put($directory.DIRECTORY_SEPARATOR.Str::of($issue)->remove('#')->toString().'.yml', $yaml);
     }
 }

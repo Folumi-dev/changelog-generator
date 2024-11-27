@@ -30,4 +30,6 @@ it('can generate changelog', function () {
         ->toContain('@GeNyaa')
         ->toContain('test change')
         ->toContain('#1234');
+
+    File::delete($changelogLocation);
 });
