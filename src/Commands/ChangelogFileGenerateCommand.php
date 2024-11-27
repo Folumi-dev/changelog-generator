@@ -25,6 +25,6 @@ final class ChangelogFileGenerateCommand extends Command
         $description = $this->ask('What is the description of your change?');
         $contributor = $this->ask('What is the username of the contributor?');
 
-        return (int) !($this->ymlFileGenerate)($issue, $description, $contributor);
+        return (int) ! ($this->ymlFileGenerate)($issue, $description, $contributor);
     }
 }

@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use Folumi\ChangelogGenerator\Actions\YmlFileGenerate;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 
 it('can generate changelog file', function () {
